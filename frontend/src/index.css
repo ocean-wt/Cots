@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply font-sans antialiased text-slate-100;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(51, 102, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(16, 185, 129, 0.12), transparent 55%),
+    #05070f;
+}
+
+html.light body {
+  @apply text-slate-800;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(51, 102, 255, 0.12), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(16, 185, 129, 0.1), transparent 55%),
+    #f2f5fb;
+}
+
+/* ---- Glassmorphism ---------------------------------------------------- */
+.glass {
+  @apply border border-white/10 bg-white/[0.055] backdrop-blur-2xl;
+  box-shadow: 0 8px 32px rgba(2, 6, 23, 0.35);
+}
+html.light .glass {
+  @apply border-slate-900/10 bg-white/70;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
+}
+
+.glass-soft {
+  @apply border border-white/[0.07] bg-white/[0.035] backdrop-blur-xl;
+}
+html.light .glass-soft {
+  @apply border-slate-900/[0.06] bg-white/55;
+}
+
+/* ---- Scrollbar -------------------------------------------------------- */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-white/15;
+}
+*::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
+html.light *::-webkit-scrollbar-thumb {
+  @apply bg-slate-400/40;
+}
+
+/* ---- Skeleton shimmer ------------------------------------------------- */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.14) 40%,
+    rgba(255, 255, 255, 0.05) 80%
+  );
+  background-size: 800px 100%;
+  @apply animate-shimmer rounded-lg;
+}
+html.light .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.05) 0%,
+    rgba(15, 23, 42, 0.12) 40%,
+    rgba(15, 23, 42, 0.05) 80%
+  );
+  background-size: 800px 100%;
+}
+
+/* ---- Markdown --------------------------------------------------------- */
+.markdown {
+  @apply text-[15px] leading-7;
+}
+.markdown h2 {
+  @apply mt-5 mb-2 flex items-center gap-2 text-base font-semibold text-white;
+}
+html.light .markdown h2 {
+  @apply text-slate-900;
+}
+.markdown h2::before {
+  content: '';
+  @apply inline-block h-4 w-1 rounded-full bg-gradient-to-b from-brand-400 to-cyan-400;
+}
+.markdown p {
+  @apply my-2;
+}
+.markdown ul {
+  @apply my-2 space-y-1.5;
+}
+.markdown ol {
+  @apply my-2 list-decimal space-y-1.5 pl-5;
+}
+.markdown li {
+  @apply leading-7;
+}
+.markdown strong {
+  @apply font-semibold text-white;
+}
+html.light .markdown strong {
+  @apply text-slate-900;
+}
+.markdown code {
+  @apply rounded-md border border-white/10 bg-white/[0.07] px-1.5 py-0.5 font-mono text-[12.5px] text-brand-200;
+}
+html.light .markdown code {
+  @apply border-slate-900/10 bg-slate-100 text-brand-700;
+}
+.markdown blockquote {
+  @apply my-3 rounded-r-lg border-l-2 border-brand-400/70 bg-white/[0.04] px-4 py-2 text-sm text-slate-300;
+}
+html.light .markdown blockquote {
+  @apply bg-slate-100 text-slate-600;
+}
+.markdown a {
+  @apply text-brand-300 underline underline-offset-2;
+}
+
+/* ---- Trace chip ------------------------------------------------------- */
+.trace-chip {
+  @apply inline-flex cursor-pointer items-center gap-1 rounded-md border border-cyan-400/30
+    bg-cyan-400/10 px-1.5 py-0.5 font-mono text-[11.5px] text-cyan-300
+    transition-colors hover:border-cyan-300/60 hover:bg-cyan-400/20;
+}
+
+/* ---- Pipeline connector animation ------------------------------------ */
+.connector-active line {
+  stroke-dasharray: 6 6;
+  animation: dash 1s linear infinite;
+}
+
+/* ---- Light mode global adaptations for dark-first utility classes ------ */
+html.light .text-white { color: #0f172a !important; }
+html.light .text-slate-100 { color: #1e293b !important; }
+html.light .text-slate-200 { color: #334155 !important; }
+html.light .text-slate-300 { color: #475569 !important; }
+html.light .text-slate-400 { color: #64748b !important; }
+html.light .text-slate-500 { color: #94a3b8 !important; }
+html.light .bg-black\/20,
+html.light .bg-black\/25 { background-color: rgba(15, 23, 42, 0.04) !important; }
+html.light .bg-white\/\[0\.05\],
+html.light .bg-white\/\[0\.07\] { background-color: rgba(15, 23, 42, 0.03) !important; }
+html.light .border-white\/5,
+html.light .border-white\/10 { border-color: rgba(15, 23, 42, 0.08) !important; }
