@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" font-family="Inter,system-ui,sans-serif">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3366ff"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="16" fill="#05070f"/>
+
+  <rect x="330" y="24" width="260" height="58" rx="12" fill="#0b1020" stroke="#8b5cf6" stroke-opacity=".5"/>
+  <text x="460" y="48" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">React 18 · SSE 流水线可视化</text>
+  <text x="460" y="68" text-anchor="middle" fill="#64748b" font-size="11">agent_action / evidence / token / final</text>
+
+  <rect x="300" y="110" width="320" height="56" rx="12" fill="#0b1020" stroke="url(#g2)"/>
+  <text x="460" y="134" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Go 高性能网关</text>
+  <text x="460" y="153" text-anchor="middle" fill="#94a3b8" font-size="10.5">JWT 注入 · TraceID · SSE 强制 Flush · 空闲超时兜底 · 熔断重试</text>
+
+  <line x1="460" y1="82" x2="460" y2="108" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="460" y1="166" x2="460" y2="192" stroke="#64748b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="240" y="194" width="440" height="150" rx="14" fill="#0b1020" stroke="url(#g1)"/>
+  <text x="460" y="218" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">LangGraph Supervisor Runtime (FastAPI · SSE)</text>
+
+  <rect x="262" y="232" width="180" height="42" rx="9" fill="#141a2e" stroke="#8b5cf6" stroke-opacity=".5"/>
+  <text x="352" y="250" text-anchor="middle" fill="#c4b5fd" font-size="11.5" font-weight="600">Supervisor</text>
+  <text x="352" y="265" text-anchor="middle" fill="#64748b" font-size="9.5">意图识别 · 任务拆解 · 汇总</text>
+
+  <rect x="478" y="232" width="180" height="42" rx="9" fill="#141a2e" stroke="#3366ff" stroke-opacity=".5"/>
+  <text x="568" y="250" text-anchor="middle" fill="#93c5fd" font-size="11.5" font-weight="600">asyncio.gather 并发派发</text>
+  <text x="568" y="265" text-anchor="middle" fill="#64748b" font-size="9.5">MAX_ROUNDS 防死循环</text>
+
+  <g font-size="10.5" font-weight="600">
+    <rect x="256" y="292" width="130" height="38" rx="8" fill="#0e2233" stroke="#0ea5e9" stroke-opacity=".45"/>
+    <text x="321" y="309" text-anchor="middle" fill="#7dd3fc">DiagnosticAgent</text>
+    <text x="321" y="322" text-anchor="middle" fill="#64748b" font-size="8.5" font-weight="400">api_logs / TraceID</text>
+
+    <rect x="395" y="292" width="130" height="38" rx="8" fill="#2a200a" stroke="#f59e0b" stroke-opacity=".45"/>
+    <text x="460" y="309" text-anchor="middle" fill="#fcd34d">BillingAgent</text>
+    <text x="460" y="322" text-anchor="middle" fill="#94805a" font-size="8.5" font-weight="400">配额 / QPS / 欠费</text>
+
+    <rect x="534" y="292" width="130" height="38" rx="8" fill="#0c241d" stroke="#10b981" stroke-opacity=".45"/>
+    <text x="599" y="309" text-anchor="middle" fill="#6ee7b7">KnowledgeAgent</text>
+    <text x="599" y="322" text-anchor="middle" fill="#5f9d86" font-size="8.5" font-weight="400">Milvus + BM25 RAG</text>
+  </g>
+
+  <g>
+    <rect x="60" y="376" width="200" height="40" rx="9" fill="#0b1020" stroke="#0ea5e9" stroke-opacity=".4"/>
+    <text x="160" y="393" text-anchor="middle" fill="#7dd3fc" font-size="11" font-weight="600">MySQL 8.0 · 11 张表</text>
+    <text x="160" y="407" text-anchor="middle" fill="#64748b" font-size="9">日志/账单/工单/轨迹/工作流</text>
+
+    <rect x="360" y="376" width="200" height="40" rx="9" fill="#0b1020" stroke="#f43f5e" stroke-opacity=".4"/>
+    <text x="460" y="393" text-anchor="middle" fill="#fda4af" font-size="11" font-weight="600">Redis 7.2</text>
+    <text x="460" y="407" text-anchor="middle" fill="#64748b" font-size="9">轨迹可靠队列 · SSE 事件续传</text>
+
+    <rect x="660" y="376" width="200" height="40" rx="9" fill="#0b1020" stroke="#10b981" stroke-opacity=".4"/>
+    <text x="760" y="393" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="600">Milvus 2.4 + etcd + MinIO</text>
+    <text x="760" y="407" text-anchor="middle" fill="#64748b" font-size="9">向量召回 · RRF · gte 精排</text>
+  </g>
+  <line x1="330" y1="346" x2="180" y2="374" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="460" y1="346" x2="460" y2="374" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="590" y1="346" x2="740" y2="374" stroke="#334155" stroke-width="1.4" marker-end="url(#arrow)"/>
+</svg>
